@@ -122,6 +122,18 @@ static void DrawTriangle(Vector2 v1, Vector2 v2, Vector2 v3, Color color)
     // TODO: Draw triangle on the screen, required for arrows
 }
 
+// USED IN: GuiImageButtonEx()
+static void DrawTextureRec(Texture2D texture, Rectangle sourceRec, Vector2 position, Color tint)
+{
+    // TODO: Draw texture (piece defined by source rectangle) on screen
+}
+
+// USED IN: GuiTextBoxMulti()
+static void DrawTextRec(RLFont font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint)
+{
+    // TODO: Draw text limited by a rectangle. This advance function wraps the text inside the rectangle
+}
+
 //-------------------------------------------------------------------------------
 // Text required functions
 //-------------------------------------------------------------------------------
@@ -135,8 +147,8 @@ static Font GetFontDefault(void)
     return font; 
 }
 
-// USED IN: GetTextWidth()
-static Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing) 
+// USED IN: GetTextWidth(), GuiTextBoxMulti()
+static Vector2 MeasureTextEx(RLFont font, const char *text, float fontSize, float spacing) 
 { 
     Vector2 size = { 0 };
     
@@ -146,7 +158,7 @@ static Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float 
 }
 
 // USED IN: GuiDrawText()
-static void DrawTextEx(Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint)
+static void DrawTextEx(RLFont font, const char *text, Vector2 position, float fontSize, float spacing, Color tint)
 {
     // TODO: Draw text on the screen
 }
